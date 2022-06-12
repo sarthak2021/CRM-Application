@@ -1,0 +1,194 @@
+<div fxLayout="column" class="page-container">
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+        <h2 class="header" fxLayoutAlign="start center">AP Inward : Branch Details</h2>
+    </div>
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>PAN No.<sup>*</sup></mat-label>
+            <input matInput placeholder=" " value="AJCPJ6543P">
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>PAN Status<sup>*</sup></mat-label>
+            <input matInput placeholder=" " value="-" disabled>
+            <mat-icon matSuffix>check_circle</mat-icon>
+        </mat-form-field>
+
+    </div>
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>RM Code/RM Name <sup>*</sup></mat-label>
+            <ng-select ngSelectMat bindLabel="name" appendTo="body" placeholder="Select Constitution"
+                [(ngModel)]="selectDropdown" bindLabel="name" bindValue="id"></ng-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Branch Name<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Branch Code<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>AP Type <sup>*</sup></mat-label>
+            <ng-select ngSelectMat bindLabel="name" appendTo="body" placeholder="Select Constitution"
+                [(ngModel)]="selectDropdown" bindLabel="name" bindValue="id"></ng-select>
+        </mat-form-field>
+
+    </div>
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Constitution <sup>*</sup></mat-label>
+            <ng-select ngSelectMat bindLabel="name" appendTo="body" placeholder="Select Constitution"
+                [(ngModel)]="selectDropdown" bindLabel="name" bindValue="id"></ng-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Location Code<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(50%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Account Name<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+    </div>
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline"
+            class="datepicker">
+            <mat-label>DOB/Inc.</mat-label>
+            <input matInput [matDatepicker]="sfrom">
+            <mat-datepicker-toggle matSuffix [for]="sfrom"></mat-datepicker-toggle>
+            <mat-datepicker #sfrom></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(50%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Trade Name<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Category <sup>*</sup></mat-label>
+            <ng-select ngSelectMat bindLabel="name" appendTo="body" placeholder="Select Constitution"
+                [(ngModel)]="selectDropdown" bindLabel="name" bindValue="id"></ng-select>
+        </mat-form-field>
+    
+    </div>
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+        <mat-form-field fxFlex="0 0 calc(12.5%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Group Code<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(12.5%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Ledger Code<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Ledger Code for Credit before Reg. Date<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Mobile No.<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(12.5%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>OTP<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(12.5%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>OTP Status<sup>*</sup></mat-label>
+            <input matInput placeholder=" " value="-" disabled> 
+        </mat-form-field>
+
+    </div>
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Email<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>CC Email<sup>*</sup></mat-label>
+            <input matInput placeholder=" ">             
+        </mat-form-field>
+
+        <mat-checkbox fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" fxLayoutAlign="start center" class="example-margin">Apply Service Tax</mat-checkbox>  
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Service Tax No.<sup>*</sup></mat-label>
+            <input matInput placeholder=" ">             
+        </mat-form-field>
+
+    </div>
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>GST Reg. No.<sup>*</sup></mat-label>
+            <input matInput placeholder=" ">             
+        </mat-form-field>
+
+        <mat-checkbox fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" fxLayoutAlign="start center" class="example-margin">Ref. Brkg. Inc. of GST</mat-checkbox>  
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>BS Group<sup>*</sup></mat-label>
+            <input matInput placeholder=" ">             
+        </mat-form-field>
+
+    </div>
+
+    <br><br>
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+       
+        <div fxFlex class="btn-group" fxLayoutAlign="center center">
+            <button mat-stroked-button color="primary">
+                <mat-icon mat-list-icon>skip_previous</mat-icon>
+            </button>
+ 
+            <button mat-flat-button color="primary">
+                <mat-icon mat-list-icon>skip_next</mat-icon>
+            </button>
+ 
+            <button mat-flat-button class="export">
+                <mat-icon mat-list-icon>save</mat-icon>
+            </button>
+        </div>
+
+    </div>
+
+</div>

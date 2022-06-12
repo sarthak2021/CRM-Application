@@ -1,0 +1,186 @@
+<div fxLayout="column" class="page-container">
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+        <h2 class="header" fxLayoutAlign="start center">AP Inward Search</h2>
+    </div>
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>AP Name<sup>*</sup></mat-label>
+            <input matInput placeholder="Enter AP Name">
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Branch Name <sup>*</sup></mat-label>
+            <input matInput placeholder="Enter Branch Name">
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Branch Code <sup>*</sup></mat-label>
+            <input matInput placeholder="Enter Branch Code">
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>RM Name <sup>*</sup></mat-label>
+            <input matInput placeholder="Enter RM Name">
+        </mat-form-field>
+
+    </div>
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>RM Code <sup>*</sup></mat-label>
+            <input matInput placeholder="Enter RM Code">
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Constitution <sup>*</sup></mat-label>
+            <ng-select ngSelectMat bindLabel="name" appendTo="body" placeholder="Select Constitution"
+                [(ngModel)]="selectDropdown" bindLabel="name" bindValue="id"></ng-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline"
+            class="datepicker">
+            <mat-label>From Date</mat-label>
+            <input matInput [matDatepicker]="sfrom">
+            <mat-datepicker-toggle matSuffix [for]="sfrom"></mat-datepicker-toggle>
+            <mat-datepicker #sfrom></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline"
+            class="datepicker">
+            <mat-label>To Date</mat-label>
+            <input matInput [matDatepicker]="sfrom">
+            <mat-datepicker-toggle matSuffix [for]="sfrom"></mat-datepicker-toggle>
+            <mat-datepicker #sfrom></mat-datepicker>
+        </mat-form-field>
+
+    </div>
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Status <sup>*</sup></mat-label>
+            <ng-select ngSelectMat bindLabel="name" appendTo="body" placeholder="Select Constitution"
+                [(ngModel)]="selectDropdown" bindLabel="name" bindValue="id"></ng-select>
+        </mat-form-field>
+
+        <div fxFlex class="btn-group" fxLayoutAlign="end center">
+            <button mat-flat-button color="primary">
+                <mat-icon mat-list-icon>search</mat-icon>
+            </button>
+
+            <button mat-stroked-button color="primary">
+                <mat-icon mat-list-icon>restart_alt</mat-icon>
+            </button>
+
+            <button mat-flat-button class="export">
+                <mat-icon mat-list-icon>file_download</mat-icon>
+            </button>
+        </div>
+
+
+    </div>
+
+</div>
+
+<div class=" " fxLayout.xl="column wrap" fxLayout.lg="column" fxLayout.sm="column" fxLayout.xs="column"
+    fxLayoutGap="20px" fxLayoutGap.sm="0" fxLayoutGap.xs="0" class="table-responsive">
+
+    <table fxFlex mat-table [dataSource]="dataSourceRefferals" class="mat-table">
+
+        <!-- FileName Column -->
+        <ng-container matColumnDef="apname">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> AP Name</th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.apname}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="bname">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Branch Type</th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.bname}}</td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="bcode">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Branch Code </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.bcode}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="rmname">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> RM Name</th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.rmname}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="rmcode">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> RM Code </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.rmcode}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="constitution">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Constitution </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.constitution}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="aname">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Account Name </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.aname}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="cdate">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Created Date </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.cdate}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="status">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Status </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.status}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="action">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Actions </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.action}} </td>
+        </ng-container>
+
+
+
+        <tr mat-header-row class="mat-header-row" *matHeaderRowDef="displayedColumns1"></tr>
+        <tr mat-row class="mat-row" *matRowDef="let row; columns: displayedColumns1;"></tr>
+
+    </table>
+
+
+</div>
+<mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+
+<div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+    fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+    <div fxFlex class="btn-group" fxLayoutAlign="center center">
+        <button mat-stroked-button color="primary">
+            <mat-icon mat-list-icon>skip_previous</mat-icon>
+        </button>
+
+        <button mat-flat-button color="primary">
+            <mat-icon mat-list-icon>skip_next</mat-icon>
+        </button>
+
+        <button mat-flat-button class="export">
+            <mat-icon mat-list-icon>save</mat-icon>
+        </button>
+    </div>
+
+</div>

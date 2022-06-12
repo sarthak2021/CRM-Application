@@ -1,0 +1,45 @@
+.mat-toolbar-row, .mat-toolbar-single-row {
+    height: 80px;
+    padding: 0 0;
+    background: #1C1D1E;
+}
+
+
+
+.nav-btn {
+    height: 80px;
+    border-right: 1px solid #414142;
+    border-radius: 0;
+    font-size: large;
+    color: rgb(48, 118, 155);
+    font-weight: 100;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+
+    &:hover {
+        color: #fff; 
+        border-top: 3px solid #009EDB;
+        border-bottom: 3px solid transparent;
+    }
+}
+
+.create-btn {
+    height: 80px;
+    border-radius: 0;
+    background: #009EDB;
+    width: 210px;
+    font-size: 1rem;
+    letter-spacing: 2px; 
+    color: #fff;
+    margin-left: 10px;
+}
+
+.create-btn-mb {
+    height: 80px;
+    border-radius: 0;
+    background: #009EDB;
+    width: 100%;
+    font-size: 1rem;
+    letter-spacing: 2px; 
+    color: #fff; 
+}

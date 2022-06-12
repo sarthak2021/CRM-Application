@@ -1,0 +1,131 @@
+<app-navbar></app-navbar>
+<br>
+    <span class="title"><b>History of Past Communications</b></span>
+<br>
+<br>
+<br>
+<mat-accordion *ngFor="let crm of listofcrm"  (click)="getcrmbyid(crm.CustomerID)">
+    <mat-expansion-panel class="accordion" >
+      <mat-expansion-panel-header >
+        <mat-panel-title class="panel-header">
+    Customer Name : <b>{{crm.Name}} </b>   
+        </mat-panel-title>
+       
+      </mat-expansion-panel-header>
+      <div class="send-email">
+        <button type="button" class="btn btn-primary" (click)="opendialog(sendemailid)" (click)="Getcustomeremail(crm.EmailId)">Send Email</button>
+    </div>
+    <br>
+          <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Conversation Information</th>
+                <th scope="col">Contacted Date And Time</th>
+                <th scope="col">Add New Conversation Information</th>
+    
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let view of crmdata">
+                <td>{{view.ConversationInfo}}</td>
+                <td>{{view.ContactDateTime | date: 'MMM dd, YYYY | HH:mm'}} </td>
+                <td>
+                    <button type="button" class="btn btn-warning btn-sm" (click)="opendialog(addinfo)" (click)="Getcustomerid(view.CustomerID)">Add</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <ng-template #addinfo>
+    <div>
+        <button mat-button class="close-icon" [mat-dialog-close]="true">
+            <mat-icon>clear</mat-icon>
+        </button>
+        <form #addcrmform="ngForm" (ngSubmit)="addcrmfn(addcrmform.value)">
+            <div class="form-row">
+              <div class="form-group col-md-2">
+                <label for="cid">Customer ID</label>
+                <input type="text" class="form-control" name="cid" id="cid" ngModel readonly>
+              </div>
+              <div class="form-group col-md-5">
+                <label for="date">Date</label>
+                <input type="date" class="form-control" name="date" ngModel>
+              </div>
+              <div class="form-group col-md-5">
+                <label for="time">Time</label>
+                <input type="time" class="form-control" name="time" ngModel>
+              </div>
+            <div class="form-group col-md-12">
+              <label for="inputAddress">Conversation Information</label>
+              <input type="text" class="form-control" name="cinfo" ngModel>
+            </div>
+            </div>
+            <button type="submit" class="btn btn-primary" mat-dialog-close [disabled]="addcrm.invalid" (click)="addcrmfn(addcrmform.value)">Submit</button>
+          </form>
+    </div>
+  </ng-template>
+
+  <ng-template #sendemailid>
+    <div>
+        <button mat-button class="close-icon" [mat-dialog-close]="true">
+            <mat-icon>clear</mat-icon>
+        </button>
+        <form #sendemail="ngForm" (ngSubmit)="sendemailfn(sendemail.value)">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="cid">Email Address</label>
+                <input type="email" class="form-control" name="email" ngModel readonly>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="date">Subject</label>
+                <input type="text" class="form-control" name="subject" ngModel>
+              </div>
+            <div class="form-group col-md-12 row-md-2">
+              <label for="inputAddress">Email Body</label>
+              <textarea type="text" class="form-control" name="emailbody" ngModel rows="3"></textarea>
+            </div>
+            </div>
+            <button type="submit" class="btn btn-primary" mat-dialog-close [disabled]="sendemail.invalid">Send</button>
+          </form>
+    </div>
+  </ng-template>
+  <!-- <ng-template #addinfo>
+    <div>
+        <button mat-button class="close-icon" [mat-dialog-close]="true">
+            <mat-icon>clear</mat-icon>
+        </button>
+        <form #addcrm="ngForm" (ngSubmit)="addcrmfn()">
+            <div class="form-row">
+              <div class="form-group col-md-2">
+                <label for="cid">Customer ID</label>
+                <input type="text" class="form-control" id="cid" ngModel readonly>
+              </div>
+              <div class="form-group col-md-5">
+                <label for="date">Date</label>
+                <input type="date" class="form-control" id="date" formControlName="ContactDate">
+              </div>
+              <div class="form-group col-md-5">
+                <label for="time">Time</label>
+                <input type="time" class="form-control" id="time" formControlName="ContactTime">
+              </div>
+            <div class="form-group col-md-12">
+              <label for="inputAddress">Conversation Information</label>
+              <input type="text" class="form-control" id="inputAddress" formControlName="ConversationInfo">
+            </div>
+            </div>
+            <button type="submit" class="btn btn-primary" mat-dialog-close [disabled]="addcrm.invalid" >Submit</button>
+          </form>
+    </div>
+  </ng-template> -->
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+<app-footer></app-footer>

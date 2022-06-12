@@ -1,0 +1,67 @@
+<br><br>
+<div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+    fxLayoutGap.sm="0" fxLayoutGap.xs="0" fxLayoutAlign="center center">
+
+    <mat-card fxFlex="0 0 calc(60%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" class="mat-elevation-z0">
+
+        <mat-card-content>
+            <form autocomplete="off" [formGroup]="Login">
+                <div fxLayout="row">
+
+                    <div fxFlex="40%" fxLayout="column">
+                        
+                        <div fxLayout="column">
+
+                            <br><br><br><br>
+                            <h2 class="header" fxLayoutAlign="center center">LOGIN</h2> 
+
+                            
+                                <mat-form-field fxFlex appearance="outline">
+                                    <mat-label>Email Address</mat-label>
+                                    <input matInput placeholder=" " formControlName="EmailId" required> 
+                                    <mat-error *ngIf="EmailId?.hasError('required')">
+                                        Email Address is <strong>required</strong>
+                                    </mat-error>
+                                    <mat-error *ngIf="EmailId?.hasError('pattern') && !EmailId?.hasError('required')">
+                                        Please enter a valid Email Address
+                                    </mat-error>
+                                    <mat-error *ngIf="EmailId?.hasError('maxlength') && !EmailId?.hasError('required')">
+                                        This field should have less than 100 characters
+                                    </mat-error>
+                                </mat-form-field>
+        
+                                <mat-form-field fxFlex appearance="outline">
+                                    <mat-label>Password</mat-label>
+                                    <input matInput placeholder=" " [type]="hide ? 'password' : 'text'" formControlName="Password" required>
+                                    <mat-error *ngIf="Password?.hasError('required')">
+                                        Password is <strong>required</strong>
+                                    </mat-error>
+                                    <mat-error *ngIf="Password?.hasError('maxlength') && !Password?.hasError('required')">
+                                        This field should have less than 100 characters
+                                    </mat-error>
+                                </mat-form-field>
+                                <div>
+
+                                    <span>Not Registered?</span>
+                                    <span routerLink="register"> Click here</span>
+                                    
+                                </div>
+        
+                                <div fxFlex fxLayoutAlign="end center">
+                                    <button mat-flat-button color="primary" class="login-btn" [disabled]="Login.invalid" (click)="loginUser()">
+                                        Login
+                                    </button>
+                                </div>
+                        </div> 
+
+                    </div>
+                    <div fxFlex="60%" fxLayoutAlign="center center" class="background">
+                        <img [src]="'/assets/login.jpg'" class="profile-logo" height="400px" alt="">
+                    </div>
+                </div>
+            </form>
+        </mat-card-content>
+
+    </mat-card>
+
+</div>

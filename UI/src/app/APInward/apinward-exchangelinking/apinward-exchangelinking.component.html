@@ -1,0 +1,197 @@
+<div fxLayout="column" class="page-container">
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+        <h2 class="header" fxLayoutAlign="start center">AP Inward: Exchange Linking</h2>
+    </div>
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Exchange <sup>*</sup></mat-label>
+            <ng-select ngSelectMat bindLabel="name" appendTo="body" [(ngModel)]="selectDropdown" bindLabel="name"
+                bindValue="id"></ng-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Segment <sup>*</sup></mat-label>
+            <ng-select ngSelectMat bindLabel="name" appendTo="body" [(ngModel)]="selectDropdown" bindLabel="name"
+                bindValue="id"></ng-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Regi. Segment<sup>*</sup></mat-label>
+            <input matInput placeholder=" ">
+        </mat-form-field>
+
+        <div fxFlex class="btn-group" fxLayoutAlign="end center">
+            <button mat-flat-button color="primary">
+                <mat-icon mat-list-icon>add</mat-icon>
+            </button>
+        </div>
+
+    </div>
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+        <mat-form-field fxFlex="0 0 calc(100%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Regi. Charge in Words<sup>*</sup></mat-label>
+            <input matInput placeholder=" " disabled>
+        </mat-form-field>
+
+    </div>
+
+</div>
+
+<div class=" " fxLayout.xl="column wrap" fxLayout.lg="column" fxLayout.sm="column" fxLayout.xs="column"
+    fxLayoutGap="20px" fxLayoutGap.sm="0" fxLayoutGap.xs="0" class="table-responsive">
+
+    <h2 class="header" fxLayoutAlign="start center">Registration Charges Details</h2>
+
+    <table fxFlex mat-table [dataSource]="dataSourceRefferals" class="mat-table">
+
+        <!-- FileName Column -->
+        <ng-container matColumnDef="checkbox">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element">
+                <mat-checkbox class="example-margin"> </mat-checkbox>
+            </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="exchange">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Exchange </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.exchange}}</td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="segment">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Segment </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.segment}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="registrationca">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Registration Charges Amount </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.registrationca}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="action">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Actions </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.action}} </td>
+        </ng-container>
+
+        <tr mat-header-row class="mat-header-row" *matHeaderRowDef="displayedColumns1"></tr>
+        <tr mat-row class="mat-row" *matRowDef="let row; columns: displayedColumns1;"></tr>
+
+    </table>
+
+</div>
+<mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+
+
+<div fxLayout="column" class="page-container">
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Total Regi. Charges<sup>*</sup></mat-label>
+            <input matInput placeholder=" " disabled>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>UTR No. <sup>*</sup></mat-label>
+            <ng-select ngSelectMat bindLabel="name" appendTo="body" [(ngModel)]="selectDropdown" bindLabel="name"
+                bindValue="id"></ng-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Tran. Amount<sup>*</sup></mat-label>
+            <input matInput placeholder=" ">
+        </mat-form-field>
+
+        <div fxFlex class="btn-group" fxLayoutAlign="end center">
+            <button mat-flat-button color="primary">
+                <mat-icon mat-list-icon>add</mat-icon>
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+<div class=" " fxLayout.xl="column wrap" fxLayout.lg="column" fxLayout.sm="column" fxLayout.xs="column"
+    fxLayoutGap="20px" fxLayoutGap.sm="0" fxLayoutGap.xs="0" class="table-responsive">
+
+    <h2 class="header" fxLayoutAlign="start center">Registration Charges Details</h2>
+
+    <table fxFlex mat-table [dataSource]="dataSourceRefferals2" class="mat-table">
+
+        <!-- FileName Column -->
+        <ng-container matColumnDef="checkbox">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element">
+                <mat-checkbox class="example-margin"> </mat-checkbox>
+            </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="exchange">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Exchange </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.exchange}}</td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="segment">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Segment </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.segment}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="neftdetails">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> NEFT Transaction Details/UTR No. </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.neftdetails}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="tranamt">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Tran. Amount </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.tranamt}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="action">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Actions </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.action}} </td>
+        </ng-container>
+
+        <tr mat-header-row class="mat-header-row" *matHeaderRowDef="displayedColumns2"></tr>
+        <tr mat-row class="mat-row" *matRowDef="let row; columns: displayedColumns2;"></tr>
+
+    </table>
+
+</div>
+<mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+
+<div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+    fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+    <div fxFlex class="btn-group" fxLayoutAlign="center center">
+        <button mat-stroked-button color="primary">
+            <mat-icon mat-list-icon>skip_previous</mat-icon>
+        </button>
+
+        <button mat-flat-button color="primary">
+            <mat-icon mat-list-icon>skip_next</mat-icon>
+        </button>
+
+        <button mat-flat-button class="export">
+            <mat-icon mat-list-icon>save</mat-icon>
+        </button>
+    </div>
+
+</div>

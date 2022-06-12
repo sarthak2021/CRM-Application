@@ -1,0 +1,65 @@
+mat-form-field[hidden] {
+    display: none !important;
+}
+
+table{
+    width: 100%;
+}
+
+.mat-header-cell{
+    font-size: 12px !important; 
+    color: #589092;
+    font-weight: 400;
+    cursor: col-resize;
+    border-right-width: thin !important;
+    border-color: #eaeeef;
+    border-style: solid;
+    border-width: thin;
+    padding-left: 5px;
+}
+
+tr.mat-header-row {
+    height: 40px !important;
+    text-align: center !important; 
+    vertical-align: middle;
+}
+
+tr.mat-footer-row, tr.mat-row {
+    height: 30px !important;
+}
+  
+.mat-table{
+    border-spacing: 0;
+    border-style: solid;
+    border-width: thin;
+    border-color: #f7f4f0;
+    width: 100%;
+}
+
+td.mat-cell, td.mat-footer-cell,  
+.mat-cell, .mat-footer-cell {
+    border-right-width: thin !important;
+    border-color: #eaeeef;
+    border-style: solid;
+    border-width: thin;
+    padding-left: 5px;
+    vertical-align: text-top !important;
+    font-size: 12px; 
+}
+
+.card-header-title{
+    width: 55%;
+    display: inline-block;
+    line-height: 0;
+    background-color: rgb(72, 130, 197);
+    font-family: "Titillium Web", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #ffffff;
+    border-right-style: ridge;
+    border-left-style: ridge;
+    border-left-color: #fdab33;
+    border-right-color: #fdab33; 
+    padding: 4px 4px 0px 14px;
+    border-radius: 3px;
+}

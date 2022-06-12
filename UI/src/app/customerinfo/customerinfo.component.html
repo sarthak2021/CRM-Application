@@ -1,0 +1,154 @@
+<app-navbar></app-navbar>
+<button type="button" class="btn btn-primary" (click)="opendialog(addcustomerinfo)">+ Add New Customer</button>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Customer ID</th>
+            <th scope="col">Full Name</th>
+            <th scope="col">Email Address</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Address</th>
+            <th scope="col">GST Number</th>
+            <th scope="col">Frequency of Reminder</th>
+            <th scope="col">Edit Customer</th>
+            <th scope="col">Delete Customer</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let customers of listofcustomer">
+            <th>{{customers.CustomerID}}</th>
+            <td>{{customers.Name}}</td>
+            <td>{{customers.EmailId}}</td>
+            <td>{{customers.Phone}}</td>
+            <td>{{customers.Address}}</td>
+            <td>{{customers.GSTno}}</td>
+            <td>{{customers.FrequencyofAutomatedReminder}}</td>
+            <td>
+                <button type="button" class="btn btn-warning btn-sm" (click)="opendialog(update)" (click)="getcustomerdata(customers.CustomerID)">Edit</button>
+            </td>
+            <td>
+                <button class="btn btn-danger btn-sm" (click)="deletecustomer(customers.CustomerID)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<ng-template #update>
+    <div>
+        <button mat-button class="close-icon" [mat-dialog-close]="true">
+            <mat-icon>clear</mat-icon>
+        </button>
+        <form [formGroup]="updatecustomer">
+            <div class="form-group">
+                <label for="Name">Full Name</label>
+                <input type="text" class="form-control" id="Name" placeholder="Full Name" formControlName="Name" maxlength="10" minlength="10">
+              </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="Email">Email Address</label>
+                <input type="email" class="form-control" id="Email" placeholder="Email" formControlName="emailaddress">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="Phone">Phone Number</label>
+                <input type="text" class="form-control" id="Phone" placeholder="Phone" formControlName="mobilenumber">
+              </div>             
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="Address">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="frequncy">Frequency of Reminder</label>
+                <select id="frequncy" class="form-control" formControlName="Frequencyofreminder">
+                  <!-- <option selected>Choose...</option> -->
+                  <option>Weekly</option>
+                  <option>Monthly</option>
+                  <option>Quaterly</option>
+                  <option>Yearly</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="GSTNo">GST Number</label>
+                <input type="text" class="form-control" id="GSTNo" placeholder="GST Number" formControlName="GSTNo">
+              </div>
+            </div>            
+            <button type="submit" class="btn btn-primary"(click)="UpdateCustomer(cid)" mat-dialog-close>Update</button>
+          </form>
+    </div>
+</ng-template>
+
+<ng-template #addcustomerinfo>
+    <div>
+        <form [formGroup]="addcustomer">
+            <button mat-button class="close-icon" [mat-dialog-close]="true">
+                <mat-icon>clear</mat-icon>
+            </button>
+            <div class="form-group">
+                <label for="Name">Full Name</label>
+                <input type="text" class="form-control" id="Name" placeholder="Full Name" formControlName="Name"  maxlength="10" minlength="10">
+              </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="Email">Email Address</label>
+                <input type="email" class="form-control" id="Email" placeholder="Email" formControlName="emailaddress">
+              </div>
+              <div class="form-group col-md-6">
+                <label for="Phone">Phone Number</label>
+                <input type="text" class="form-control" id="Phone" placeholder="Phone" formControlName="mobilenumber">
+              </div>             
+            </div>
+            <div class="form-group">
+              <label for="inputAddress">Address</label>
+              <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="Address">
+            </div>
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <label for="frequncy">Frequency of Reminder</label>
+                <select id="frequncy" class="form-control" formControlName="Frequencyofreminder">
+                  <!-- <option selected>Choose...</option> -->
+                  <option>Weekly</option>
+                  <option>Monthly</option>
+                  <option>Quaterly</option>
+                  <option>Yearly</option>
+                </select>
+              </div>
+              <div class="form-group col-md-6">
+                <label for="GSTNo">GST Number</label>
+                <input type="text" class="form-control" id="GSTNo" placeholder="GST Number" formControlName="GSTNo">
+              </div>
+            </div>            
+            <button type="submit" class="btn btn-primary"(click)="AddCustomer()" mat-dialog-close [disabled]="addcustomer.invalid">Submit</button>
+          </form>
+    </div>
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<app-footer></app-footer>

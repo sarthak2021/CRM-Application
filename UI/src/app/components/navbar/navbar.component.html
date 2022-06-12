@@ -1,0 +1,28 @@
+<mat-toolbar fxLayout="row" color="">
+  
+    <button mat-button class="nav-btn" fxHide.xs routerLink="cinfo">
+        Customers Information
+     </button>
+    <button mat-button class="nav-btn" fxHide.xs routerLink="crm">
+        CRM 
+     </button>
+    
+
+    <div fxFlex fxLayoutAlign="end center">
+
+        <button mat-icon-button [matMenuTriggerFor]="logout">
+            <mat-icon color="accent">account_circle</mat-icon>
+        </button>
+
+        <button mat-button class="create-btn" fxHide.xs>
+           Hi, Sarthak
+        </button>
+
+        <mat-menu #logout="matMenu" class="my-class">
+            <button mat-menu-item (click)="onlogoutClick()">
+                <mat-icon color="primary">logout</mat-icon> Logout
+            </button> 
+        </mat-menu>
+         
+    </div>
+</mat-toolbar>

@@ -1,0 +1,257 @@
+<div fxLayout="column" class="page-container">
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+        <h2 class="header" fxLayoutAlign="start center">AP Inward: Brokerage Sharing</h2>
+    </div>
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+        <mat-form-field fxFlex="0 0 calc(12.5%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>AP Code <sup>*</sup></mat-label>
+            <ng-select ngSelectMat bindLabel="name" appendTo="body" [(ngModel)]="selectDropdown" bindLabel="name"
+                bindValue="id"></ng-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(12.5%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Exchange <sup>*</sup></mat-label>
+            <ng-select ngSelectMat bindLabel="name" appendTo="body" [(ngModel)]="selectDropdown" bindLabel="name"
+                bindValue="id"></ng-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Segment <sup>*</sup></mat-label>
+            <ng-select ngSelectMat bindLabel="name" appendTo="body" [(ngModel)]="selectDropdown" bindLabel="name"
+                bindValue="id"></ng-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline"
+            class="datepicker">
+            <mat-label>Effective From</mat-label>
+            <input matInput [matDatepicker]="sfrom">
+            <mat-datepicker-toggle matSuffix [for]="sfrom"></mat-datepicker-toggle>
+            <mat-datepicker #sfrom></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Sharing Basis <sup>*</sup></mat-label>
+            <ng-select ngSelectMat bindLabel="name" appendTo="body" [(ngModel)]="selectDropdown" bindLabel="name"
+                bindValue="id"></ng-select>
+        </mat-form-field>
+
+    </div>
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Delivery Type <sup>*</sup></mat-label>
+            <ng-select ngSelectMat bindLabel="name" appendTo="body" [(ngModel)]="selectDropdown" bindLabel="name"
+                bindValue="id"></ng-select>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline"
+            class="datepicker">
+            <mat-label>Effective To</mat-label>
+            <input matInput [matDatepicker]="sfrom">
+            <mat-datepicker-toggle matSuffix [for]="sfrom"></mat-datepicker-toggle>
+            <mat-datepicker #sfrom></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>From Brokerage<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>To Brokerage<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+    </div>
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Sharing %<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Min. Sharing %<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Sharing Amt./Crore<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Rounding Upto<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+    </div>
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Introducer Code<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Introducer Sharing %<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Int. Sharing Amt./Crore<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Brkg. per Lot<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+    </div>
+
+    <div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+        fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Brkg. Min. per Lot<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+        <mat-form-field fxFlex="0 0 calc(25%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" appearance="outline">
+            <mat-label>Brkg. Max. per Lot<sup>*</sup></mat-label>
+            <input matInput placeholder=" "> 
+        </mat-form-field>
+
+        <mat-checkbox fxFlex="0 0 calc(12.5%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" fxLayoutAlign="start center" class="example-margin">Second Level</mat-checkbox>  
+
+        <mat-checkbox fxFlex="0 0 calc(12.5%-20px)" fxFlex.sm="0 0 100%" fxFlex.xs="0 0 100%" fxLayoutAlign="start center" class="example-margin">On Total</mat-checkbox>  
+
+        <div fxFlex class="btn-group" fxLayoutAlign="end center">
+            <button mat-flat-button color="primary">
+                <mat-icon mat-list-icon>add</mat-icon>
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+<div class=" " fxLayout.xl="column wrap" fxLayout.lg="column" fxLayout.sm="column" fxLayout.xs="column"
+    fxLayoutGap="20px" fxLayoutGap.sm="0" fxLayoutGap.xs="0" class="table-responsive">
+
+    <h2 class="header" fxLayoutAlign="start center">Branch Details</h2>
+
+    <table fxFlex mat-table [dataSource]="dataSourceRefferals" class="mat-table">
+
+        <!-- FileName Column -->
+        <ng-container matColumnDef="checkbox">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element">
+                <mat-checkbox class="example-margin"> </mat-checkbox>
+            </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="apcode">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> AP Code</th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.apcode}}</td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="exchange">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Exchange </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.exchange}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="segment">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Segment </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.segment}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="sbasis">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Sharing Basis </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.sbasis}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="deltype">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Del. Type </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.deltype}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="frombrkg">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> From Brokerage </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.frombrkg}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="tobrkg">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> To Brokerage </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.tobrkg}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="sharing">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Sharing % </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.sharing}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="minsharing">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Min. Sharing % </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.minsharing}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="sharingamt">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Sharing Amt./Crore </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.sharingamt}} </td>
+        </ng-container>
+
+        <!-- Delete Icon Column -->
+        <ng-container matColumnDef="action">
+            <th mat-header-cell class="mat-header-cell" *matHeaderCellDef> Actions </th>
+            <td mat-cell class="mat-cell" *matCellDef="let element"> {{element.action}} </td>
+        </ng-container>
+ 
+        <tr mat-header-row class="mat-header-row" *matHeaderRowDef="displayedColumns1"></tr>
+        <tr mat-row class="mat-row" *matRowDef="let row; columns: displayedColumns1;"></tr>
+
+    </table>
+
+</div>
+<mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+
+<div class=" " fxLayout.xl="row wrap" fxLayout.lg="row" fxLayout.sm="column" fxLayout.xs="column" fxLayoutGap="20px"
+    fxLayoutGap.sm="0" fxLayoutGap.xs="0">
+
+    <div fxFlex class="btn-group" fxLayoutAlign="center center">
+        <button mat-stroked-button color="primary">
+            <mat-icon mat-list-icon>skip_previous</mat-icon>
+        </button>
+
+        <button mat-flat-button color="primary">
+            <mat-icon mat-list-icon>skip_next</mat-icon>
+        </button>
+
+        <button mat-flat-button class="export">
+            <mat-icon mat-list-icon>save</mat-icon>
+        </button>
+    </div>
+
+</div>

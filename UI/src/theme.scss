@@ -1,0 +1,253 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+$mat-myapp-primary: (
+    50 : #E0EBF6,
+    100 : #B3CCEA,
+    200 : #80AADC,
+    300 : #4D88CD,
+    400 : #266FC3,
+    500 : #009EDB,
+    600 : #004EB1,
+    700 : #0044A8,
+    800 : #003BA0,
+    900 : #002A91,
+    A100 : #BDCBFF,
+    A200 : #8AA3FF,
+    A400 : #577AFF,
+    A700 : #3D66FF,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #ffffff,
+        400 : #ffffff,
+        500 : #ffffff,
+        600 : #ffffff,
+        700 : #ffffff,
+        800 : #ffffff,
+        900 : #ffffff,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #ffffff,
+        A700 : #ffffff,
+    )
+);
+
+$mat-myapp-accent: (
+    50 : #fff3e3,
+    100 : #ffe2b9,
+    200 : #ffcf8b,
+    300 : #ffbb5c,
+    400 : #ffad39,
+    500 : #fff,
+    600 : #ff9613,
+    700 : #ff8c10,
+    800 : #ff820c,
+    900 : #ff7006,
+    A100 : #ffffff,
+    A200 : #fff8f3,
+    A400 : #ffd8c0,
+    A700 : #ffc8a7,
+    contrast: (
+        50 : #000000,
+        100 : #000000,
+        200 : #000000,
+        300 : #000000,
+        400 : #000000,
+        500 : #000000,
+        600 : #000000,
+        700 : #000000,
+        800 : #000000,
+        900 : #000000,
+        A100 : #000000,
+        A200 : #000000,
+        A400 : #000000,
+        A700 : #000000,
+    )
+);
+
+$primary: mat-palette($mat-myapp-primary);
+$accent: mat-palette($mat-myapp-accent);
+
+$theme: mat-light-theme($primary, $accent);
+
+@include angular-material-theme($theme);
+@mixin ng-select-theme($theme) {
+    $primary: map-get($theme, primary);
+    $accent: map-get($theme, accent);
+    $warn: map-get($theme, warn);
+    $isdark: map-get($theme, is-dark);
+
+    $foreground: map-get($theme, foreground);
+    $background: map-get($theme, background);
+
+
+    $highlight-color: if($isdark, mat-color($foreground, text)  ,mat-color($primary));
+
+    .mat-button-toggle {
+        background-color: mat-color($primary);
+        color: mat-color($primary, default-contrast);
+    } 
+
+    .ng-select, .ng-select-container, .ng-input>input {
+        color: mat-color($foreground, text) !important;
+        font: inherit;
+        font-family: inherit;
+    }
+    .ng-placeholder{
+        display: none;
+        color: mat-color($foreground, text,.54) !important;
+    }
+    
+    .ng-select-focused {
+      .ng-placeholder{
+        display: inline-block;
+      }
+      .ng-has-value{
+       .ng-placeholder{
+          display: none;
+        }
+      }
+    }
+
+    .ng-clear-wrapper, .ng-arrow-wrapper{
+        height: 1em;
+        color: mat-color($foreground, text, .4); 
+    }
+    .ng-clear-wrapper:hover, .ng-arrow-wrapper:hover{        
+        color: mat-color($foreground, text); 
+    }
+    .ng-select .ng-arrow-wrapper .ng-arrow{
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid;
+        height: 7px !important;
+    }
+
+    .ng-select.ng-select-single .ng-select-container .ng-value-container {
+      height: 1em;
+    }
+
+    .ng-select.ng-select-multiple{
+      margin-bottom: -4px;
+      .ng-value{
+          // WIP
+          color: mat-color($primary, default-contrast);
+          background: mat-color($primary);
+          padding: 4px 8px;
+          border-radius: 12px;
+          margin: 0 4px 2px 0;
+          .ng-value-label{
+            margin-left: 8px;
+          }
+      }
+    }
+    .ng-select.ng-select-multiple .ng-select-container .ng-value-container .ng-input{
+      padding-top: 4px;
+    }
+
+    .ng-dropdown-panel{
+        @include mat-elevation(4);
+        background: mat-color($background, card);
+        color: mat-color($foreground, text) !important;
+
+        
+        .mat-option.ng-option-selected:not(.ng-option-marked):not(:hover) {
+          background: mat-color($background, card);
+    
+          &:not(.ng-option-disabled) {
+            color: mat-color($foreground, text);
+          }
+        }
+        
+        // left: 0;
+        &.ng-select-bottom {
+            top: calc(100% + .5em );
+        }
+        &.ng-select-top {
+            bottom: calc(100% + 1.5em);            
+        }
+        &.multiple {
+            .ng-option {
+                &.selected {
+                    background: mat-color($background,card);
+                }
+                &.marked {
+                    background: mat-color($foreground, text, .04);
+                }
+            }
+        }
+        
+        .ng-dropdown-header {
+            border-bottom: 1px solid mat-color($foreground, text,.12);
+            padding: 0 16px;
+            line-height: 3em;
+            min-height: 3em;
+        }
+
+        .ng-dropdown-footer {
+            border-top: 1px solid mat-color($foreground, text,.12);
+            padding: 0 16px;
+            line-height: 3em;
+            min-height: 3em;
+        }
+
+        .ng-dropdown-panel-items {
+            .ng-optgroup {
+                user-select: none;
+                cursor: pointer;
+                line-height: 3em;
+                height: 3em;
+                padding: 0 16px;
+                color: mat-color($foreground, text);
+                font-weight: 500;
+                &.ng-option-marked {
+                    background:mat-color($foreground, text, .04);
+                }
+                &.ng-option-disabled {
+                    cursor: default;
+                }
+                &.ng-option-selected {
+                    background: mat-color($foreground, text, .12);
+                    color: $highlight-color;
+                }
+            }
+            .ng-option {
+                line-height: 3em;
+                min-height: 3em;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                padding: 0 16px;
+                text-decoration: none;
+                position: relative;
+                color: mat-color($foreground, text,.87);
+                text-align: left;
+         
+                &.ng-option-marked {
+                    background: mat-color($foreground, text, .04);
+                    color: mat-color($foreground, text,.87);
+                }
+                &.ng-option-selected {
+                    background: mat-color($foreground, text, .12);
+                    color: $highlight-color;
+                }
+                &.ng-option-disabled {
+                    color: mat-color($foreground, text, 0.38);
+                }
+                &.ng-option-child {
+                    padding-left: 32px;                    
+                }
+                .ng-tag-label {
+                    padding-right: 5px;
+                    font-size: 80%;
+                    font-weight: 400;
+                    color: mat-color($foreground, text, 0.38);
+                }
+            }
+        }
+    }
+}
+
+@include ng-select-theme($theme);
